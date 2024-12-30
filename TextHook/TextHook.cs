@@ -114,19 +114,19 @@ namespace TextHook
                     charDialogueBox = null;
 
                 }
-                // In Quest log
-                if (activeQuestLog is not null)
+            }
+            // In Quest log
+            if (activeQuestLog is not null)
+            {
+                var questField = typeof(QuestLog).GetField("_shownQuest", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                if (questField?.GetValue(activeQuestLog) is IQuest shownQuest)
                 {
-                    var questField = typeof(QuestLog).GetField("_shownQuest", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-                    if (questField?.GetValue(activeQuestLog) is IQuest shownQuest)
+                    string name = shownQuest.GetName();
+                    // Avoid repeat logs
+                    if (name != lastViewedQuest)
                     {
-                        string name = shownQuest.GetName();
-                        // Avoid repeat logs
-                        if (name != lastViewedQuest)
-                        {
-                            lastViewedQuest = name;
-                            ClipboardService.SetText(name + "\n" + shownQuest.GetDescription());
-                        }
+                        lastViewedQuest = name;
+                        ClipboardService.SetText(name + "\n" + shownQuest.GetDescription());
                     }
                 }
             }
