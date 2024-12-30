@@ -2,3 +2,8 @@
 - The mod needs more thorough testing, but it should be enough for language learners to get started with SV.
 - Currently NPC dialogue, the quest log, daily quests, and random text like the TV and signs are getting copied.
 - The intro cutscene is not copied but it's easy enough to find a transcript.
+
+  
+Requires [SMAPI](https://smapi.io/)
+
+To install just extract the mod into your Mods folder
