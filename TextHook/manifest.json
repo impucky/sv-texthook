@@ -1,0 +1,10 @@
+{
+  "Name": "TextHook",
+  "Author": "Pucky",
+  "Version": "0.0.1",
+  "Description": "Copy text from the game to the clipboard",
+  "UniqueID": "pucky.texthook",
+  "EntryDll": "TextHook.dll",
+  "MinimumApiVersion": "3.0.0",
+  "UpdateKeys": []
+}
